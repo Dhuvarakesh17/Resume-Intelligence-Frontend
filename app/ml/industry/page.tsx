@@ -116,7 +116,7 @@ export default function IndustryDetectionPage() {
                 <Target className="text-green-600" size={20} />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">Industry Detection</h1>
+                <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Industry Detection</h1>
                 <p className="text-sm text-gray-600">Auto-detect best-fit industry with 8+ profiles</p>
               </div>
             </div>
@@ -128,7 +128,7 @@ export default function IndustryDetectionPage() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Input Form */}
-          <div className="space-y-6">
+          <div className="order-2 lg:order-1 space-y-6">
             <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
               <h2 className="text-lg font-semibold text-gray-900 mb-4">Input</h2>
 
@@ -208,7 +208,7 @@ export default function IndustryDetectionPage() {
           </div>
 
           {/* Results */}
-          <div className="space-y-6">
+          <div className="order-1 lg:order-2 space-y-6">
             {result ? (
               <>
                 {/* Best Fit Industry */}
@@ -219,10 +219,10 @@ export default function IndustryDetectionPage() {
                   </div>
                   
                   <div className="bg-gradient-to-br from-green-50 to-emerald-100 rounded-lg p-6 mb-6">
-                    <p className="text-3xl font-bold text-green-900 mb-2">
+                    <p className="text-2xl sm:text-3xl font-bold text-green-900 mb-2 break-words">
                       {result.best_fit_industry.industry}
                     </p>
-                    <div className="grid grid-cols-3 gap-3 text-sm">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
                       <div>
                         <p className="text-green-700">Score</p>
                         <p className="font-semibold text-green-900">{result.best_fit_industry.industry_score.toFixed(1)}</p>
@@ -334,7 +334,7 @@ export default function IndustryDetectionPage() {
                 </div>
               </>
             ) : (
-              <div className="bg-white rounded-xl p-12 border border-gray-200 shadow-md flex flex-col items-center justify-center min-h-[500px]">
+              <div className="bg-white rounded-xl p-8 sm:p-12 border border-gray-200 shadow-md flex flex-col items-center justify-center min-h-[360px] sm:min-h-[500px]">
                 <div className="mb-6 relative w-full h-64 flex items-center justify-center">
                   <Image
                     src="/industry-collaboration.jpg"

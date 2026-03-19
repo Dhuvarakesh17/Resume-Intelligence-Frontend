@@ -138,7 +138,7 @@ export default function FindBestCandidatePage() {
                 <Users className="text-yellow-600" size={20} />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">Find Best Candidate</h1>
+                <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Find Best Candidate</h1>
                 <p className="text-sm text-gray-600">Optimal candidate with customizable weights</p>
               </div>
             </div>
@@ -150,7 +150,7 @@ export default function FindBestCandidatePage() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Input Section */}
-          <div className="space-y-6">
+          <div className="order-2 lg:order-1 space-y-6">
             <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-lg font-semibold text-gray-900">Select Candidates ({selectedResumeIds.length})</h2>
@@ -296,7 +296,7 @@ export default function FindBestCandidatePage() {
           </div>
 
           {/* Results */}
-          <div className="space-y-6">
+          <div className="order-1 lg:order-2 space-y-6">
             {result ? (
               <>
                 {/* Winner Card */}
@@ -307,7 +307,7 @@ export default function FindBestCandidatePage() {
                     </div>
                   </div>
                   
-                  <h2 className="text-2xl font-bold text-center text-gray-900 mb-2">Best Candidate</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold text-center text-gray-900 mb-2">Best Candidate</h2>
                   
                   {(() => {
                     const bestResume = resumes.find(r => r.resumeId.toString() === result.best_resume_id);
@@ -320,7 +320,7 @@ export default function FindBestCandidatePage() {
                         <div className="bg-white rounded-lg p-4">
                           <div className="text-center">
                             <p className="text-sm text-gray-600 mb-1">Composite Score</p>
-                            <p className="text-4xl font-bold text-yellow-600">{result.score.toFixed(1)}</p>
+                            <p className="text-3xl sm:text-4xl font-bold text-yellow-600">{result.score.toFixed(1)}</p>
                           </div>
                         </div>
 
@@ -424,7 +424,7 @@ export default function FindBestCandidatePage() {
                 </div>
               </>
             ) : (
-              <div className="bg-white rounded-xl p-12 border border-gray-200 shadow-md flex flex-col items-center justify-center min-h-[500px]">
+              <div className="bg-white rounded-xl p-8 sm:p-12 border border-gray-200 shadow-md flex flex-col items-center justify-center min-h-[360px] sm:min-h-[500px]">
                 <div className="mb-6 relative w-full h-64 flex items-center justify-center">
                   <Image
                     src="/best-candidate.jpg"

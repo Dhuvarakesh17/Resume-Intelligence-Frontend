@@ -85,35 +85,35 @@ function ScoreContent() {
       {/* Header */}
       <header className="border-b border-gray-200 bg-white/80 backdrop-blur-sm sticky top-0 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-gray-900">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center md:text-left">
               Resume Scores
             </h1>
-            <div className="flex gap-4">
+            <div className="flex w-full flex-wrap gap-2 sm:gap-4 md:w-auto">
               <button
                 onClick={() => router.push('/dashboard')}
-                className="px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm flex items-center gap-2"
+                className="flex-1 md:flex-none px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm inline-flex items-center justify-center gap-2"
               >
                 <LayoutDashboard size={16} />
                 Dashboard
               </button>
               <button
                 onClick={() => router.push('/upload')}
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all shadow-sm flex items-center gap-2"
+                className="flex-1 md:flex-none px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all shadow-sm inline-flex items-center justify-center gap-2"
               >
                 <Upload size={16} />
                 Upload New
               </button>
               <button
                 onClick={() => router.push('/recommend')}
-                className="px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm flex items-center gap-2"
+                className="flex-1 md:flex-none px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm inline-flex items-center justify-center gap-2"
               >
                 <Lightbulb size={16} />
                 Get Recommendations
               </button>
               <button
                 onClick={() => router.push('/ml-tools')}
-                className="px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm flex items-center gap-2"
+                className="flex-1 md:flex-none px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm inline-flex items-center justify-center gap-2"
               >
                 <Activity size={16} />
                 ML Tools
@@ -134,7 +134,7 @@ function ScoreContent() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Left Sidebar - Resume List */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-md sticky top-24">
+            <div className="bg-white rounded-xl p-5 sm:p-6 border border-gray-200 shadow-md lg:sticky lg:top-24">
               <h2 className="text-xl font-bold text-gray-900 mb-4">My Resumes ({resumes.length})</h2>
               
               {isLoading ? (
@@ -187,13 +187,13 @@ function ScoreContent() {
           {/* Main Content - Score Display */}
           <div className="lg:col-span-3">
             {isLoadingSelection ? (
-              <div className="bg-white rounded-xl p-12 border border-gray-200 shadow-md text-center">
+              <div className="bg-white rounded-xl p-8 sm:p-12 border border-gray-200 shadow-md text-center">
                 <div className="text-gray-600 text-lg">Loading selected resume details...</div>
               </div>
             ) : selectedResume && hasRenderableScore(selectedResume.score) ? (
               <ScoreDisplay score={selectedResume.score} />
             ) : (
-              <div className="bg-white rounded-xl p-12 border border-gray-200 shadow-md text-center">
+              <div className="bg-white rounded-xl p-8 sm:p-12 border border-gray-200 shadow-md text-center">
                 <div className="text-gray-600 text-lg">
                   {isLoading ? 'Loading...' : 'Select a resume with AI analysis to view detailed score insights'}
                 </div>

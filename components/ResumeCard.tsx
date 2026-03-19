@@ -57,7 +57,7 @@ export default function ResumeCard({ resume, onClick }: ResumeCardProps) {
 
       {resume.score ? (
         <div className="space-y-3">
-          <div className="grid grid-cols-2 gap-3 text-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-sm">
             <div>
               <span className="text-gray-600">ATS Score:</span>
               <span className={`ml-2 font-semibold ${getScoreColor(resume.score.atsScore)}`}>
@@ -87,7 +87,7 @@ export default function ResumeCard({ resume, onClick }: ResumeCardProps) {
         </div>
       )}
 
-      <div className="mt-4 pt-4 border-t border-gray-200 flex items-center justify-between">
+      <div className="mt-4 pt-4 border-t border-gray-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
         <a
           href={resume.blobUrl}
           target="_blank"

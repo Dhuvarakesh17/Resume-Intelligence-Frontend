@@ -164,7 +164,7 @@ export default function CompareResumesPage() {
                 <GitCompare className="text-orange-600" size={20} />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">Compare Resumes</h1>
+                <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Compare Resumes</h1>
                 <p className="text-sm text-gray-600">Side-by-side resume comparison with insights</p>
               </div>
             </div>
@@ -174,12 +174,19 @@ export default function CompareResumesPage() {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {!result && !loading && (
+          <div className="mb-8 bg-white rounded-xl p-8 sm:p-12 border border-gray-200 shadow-md text-center">
+            <GitCompare className="mx-auto text-gray-400 mb-4" size={48} />
+            <p className="text-gray-600">Compare resumes to see detailed insights</p>
+          </div>
+        )}
+
         <form onSubmit={handleCompare} className="space-y-6">
           {/* Input Section */}
           <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Select Resumes to Compare</h2>
             
-            {selectedResumes.map((selected, index) => (
+            {selectedResumes.map((selected, index) => ( 
               <div key={index} className="mb-4 p-4 border border-gray-200 rounded-lg">
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="text-sm font-medium text-gray-700">Resume {index + 1}</h3>
@@ -225,7 +232,7 @@ export default function CompareResumesPage() {
               </div>
             ))}
 
-            {selectedResumes.length < 5 && (
+            {selectedResumes.length < 5 && ( 
               <button
                 type="button"
                 onClick={addResume}
@@ -321,12 +328,6 @@ export default function CompareResumesPage() {
           </div>
         )}
 
-        {!result && !loading && (
-          <div className="mt-8 bg-white rounded-xl p-12 border border-gray-200 shadow-md text-center">
-            <GitCompare className="mx-auto text-gray-400 mb-4" size={48} />
-            <p className="text-gray-600">Compare resumes to see detailed insights</p>
-          </div>
-        )}
       </main>
     </div>
   );

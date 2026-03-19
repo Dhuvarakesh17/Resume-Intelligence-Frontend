@@ -33,21 +33,21 @@ export default function UploadPage() {
       {/* Header */}
       <header className="border-b border-gray-200 bg-white/80 backdrop-blur-sm sticky top-0 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-gray-900">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center md:text-left">
               Upload Resume
             </h1>
-            <div className="flex gap-4">
+            <div className="flex w-full flex-wrap gap-2 sm:gap-4 md:w-auto">
               <button
                 onClick={() => router.push('/dashboard')}
-                className="px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm flex items-center gap-2"
+                className="flex-1 md:flex-none px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm inline-flex items-center justify-center gap-2"
               >
                 <LayoutDashboard size={16} />
                 Dashboard
               </button>
               <button
                 onClick={() => router.push('/score')}
-                className="px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm flex items-center gap-2"
+                className="flex-1 md:flex-none px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm inline-flex items-center justify-center gap-2"
               >
                 <BarChart3 size={16} />
                 View Scores
@@ -58,21 +58,21 @@ export default function UploadPage() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Upload Your Resume
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-base sm:text-xl text-gray-600">
             Get instant AI-powered analysis and recommendations
           </p>
         </div>
 
-        <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-lg">
+        <div className="bg-white rounded-xl p-5 sm:p-8 border border-gray-200 shadow-lg">
           <ResumeUploader onUploadSuccess={handleUploadSuccess} />
           
           {uploadedResume && (
-            <div className="mt-8 p-6 bg-green-50 border border-green-200 text-green-700 rounded-lg text-center">
+            <div className="mt-8 p-4 sm:p-6 bg-green-50 border border-green-200 text-green-700 rounded-lg text-center">
               <div className="flex items-center justify-center gap-2 mb-2">
                 <CheckCircle size={24} />
                 <p className="text-lg font-semibold">Upload Successful!</p>
@@ -83,8 +83,8 @@ export default function UploadPage() {
         </div>
 
         {/* Features */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-md">
+        <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white rounded-lg p-5 sm:p-6 border border-gray-200 shadow-md">
             <div className="mb-3">
               <BarChart className="w-8 h-8 text-blue-600" />
             </div>
@@ -93,7 +93,7 @@ export default function UploadPage() {
               Get detailed scoring on how well your resume performs with ATS systems
             </p>
           </div>
-          <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-md">
+          <div className="bg-white rounded-lg p-5 sm:p-6 border border-gray-200 shadow-md">
             <div className="mb-3">
               <Target className="w-8 h-8 text-indigo-600" />
             </div>
@@ -102,7 +102,7 @@ export default function UploadPage() {
               AI identifies the best-fit roles based on your experience and skills
             </p>
           </div>
-          <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-md">
+          <div className="bg-white rounded-lg p-5 sm:p-6 border border-gray-200 shadow-md">
             <div className="mb-3">
               <Lightbulb className="w-8 h-8 text-green-600" />
             </div>

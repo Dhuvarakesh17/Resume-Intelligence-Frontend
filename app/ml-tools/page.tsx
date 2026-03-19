@@ -140,19 +140,19 @@ export default function MlToolsPage() {
     <div className="min-h-screen bg-gray-50">
       <header className="border-b border-gray-200 bg-white/80 backdrop-blur-sm sticky top-0 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-gray-900">ML Tools</h1>
-            <div className="flex gap-3">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center md:text-left">ML Tools</h1>
+            <div className="flex w-full gap-2 sm:gap-3 md:w-auto">
               <button
                 onClick={() => router.push('/dashboard')}
-                className="px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm flex items-center gap-2"
+                className="flex-1 md:flex-none px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm inline-flex items-center justify-center gap-2"
               >
                 <LayoutDashboard size={16} />
                 Dashboard
               </button>
               <button
                 onClick={fetchMeta}
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all shadow-sm flex items-center gap-2"
+                className="flex-1 md:flex-none px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all shadow-sm inline-flex items-center justify-center gap-2"
               >
                 <RefreshCw size={16} />
                 Refresh
@@ -280,7 +280,7 @@ export default function MlToolsPage() {
           </form>
 
           {enhancedResult && (
-            <pre className="mt-4 bg-gray-900 text-gray-100 text-xs p-4 rounded-lg overflow-auto">
+            <pre className="mt-4 bg-gray-900 text-gray-100 text-xs p-3 sm:p-4 rounded-lg overflow-auto">
 {JSON.stringify(enhancedResult, null, 2)}
             </pre>
           )}
@@ -311,7 +311,7 @@ export default function MlToolsPage() {
           </form>
 
           {comparisonResult && (
-            <pre className="mt-4 bg-gray-900 text-gray-100 text-xs p-4 rounded-lg overflow-auto">
+            <pre className="mt-4 bg-gray-900 text-gray-100 text-xs p-3 sm:p-4 rounded-lg overflow-auto">
 {JSON.stringify(comparisonResult, null, 2)}
             </pre>
           )}

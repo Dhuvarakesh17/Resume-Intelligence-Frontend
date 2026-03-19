@@ -115,42 +115,42 @@ export default function DashboardPage() {
       {/* Header */}
       <header className="border-b border-gray-200 bg-white/80 backdrop-blur-sm sticky top-0 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-gray-900">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center md:text-left">
               Resume Intelligence AI
             </h1>
-            <div className="flex gap-3">
+            <div className="flex w-full flex-wrap gap-2 sm:gap-3 md:w-auto md:flex-nowrap">
               <button
                 onClick={() => router.push('/upload')}
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all shadow-sm hover:shadow-md flex items-center gap-2"
+                className="flex-1 md:flex-none px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all shadow-sm hover:shadow-md inline-flex items-center justify-center gap-2"
               >
                 <Upload size={16} />
                 Upload
               </button>
               <button
                 onClick={() => router.push('/score')}
-                className="px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm hover:shadow-md flex items-center gap-2"
+                className="flex-1 md:flex-none px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm hover:shadow-md inline-flex items-center justify-center gap-2"
               >
                 <BarChart3 size={16} />
                 Scores
               </button>
               <button
                 onClick={() => router.push('/recommend')}
-                className="px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm hover:shadow-md flex items-center gap-2"
+                className="flex-1 md:flex-none px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm hover:shadow-md inline-flex items-center justify-center gap-2"
               >
                 <Lightbulb size={16} />
                 Recommendations
               </button>
               <button
                 onClick={() => router.push('/profile')}
-                className="px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm hover:shadow-md flex items-center gap-2"
+                className="flex-1 md:flex-none px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm hover:shadow-md inline-flex items-center justify-center gap-2"
               >
                 <User size={16} />
                 Profile
               </button>
               <button
                 onClick={handleLogout}
-                className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-all flex items-center gap-2"
+                className="flex-1 md:flex-none px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-all inline-flex items-center justify-center gap-2"
               >
                 <LogOut size={16} />
                 Logout
@@ -169,7 +169,7 @@ export default function DashboardPage() {
         )}
 
         <section className="mb-6 bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-sm text-gray-500">ML Service Status</p>
               <p className="text-base font-semibold text-gray-900">
@@ -360,10 +360,10 @@ export default function DashboardPage() {
           <div className="lg:col-span-2">
             {selectedResume ? (
               <div className="space-y-6">
-                <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
-                  <div className="flex items-start justify-between mb-4">
+                <div className="bg-white rounded-xl p-4 sm:p-6 border border-gray-200 shadow-md">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between mb-4">
                     <div>
-                      <h2 className="text-2xl font-bold text-gray-900">{selectedResume.fileName}</h2>
+                      <h2 className="text-xl sm:text-2xl font-bold text-gray-900 break-words">{selectedResume.fileName}</h2>
                       <p className="text-sm text-gray-500 mt-1">
                         Uploaded: {new Date(selectedResume.uploadedAt).toLocaleString()}
                       </p>
@@ -372,7 +372,7 @@ export default function DashboardPage() {
                       href={selectedResume.blobUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors text-sm"
+                      className="w-full sm:w-auto px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors text-sm text-center"
                     >
                       Download Resume
                     </a>

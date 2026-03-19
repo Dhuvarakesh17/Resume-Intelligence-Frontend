@@ -274,35 +274,35 @@ export default function RecommendPage() {
       {/* Header */}
       <header className="border-b border-gray-200 bg-white/80 backdrop-blur-sm sticky top-0 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-gray-900">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center md:text-left">
               Resume Recommendations
             </h1>
-            <div className="flex gap-4">
+            <div className="flex w-full flex-wrap gap-2 sm:gap-4 md:w-auto">
               <button
                 onClick={() => router.push('/dashboard')}
-                className="px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm flex items-center gap-2"
+                className="flex-1 md:flex-none px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm inline-flex items-center justify-center gap-2"
               >
                 <LayoutDashboard size={16} />
                 Dashboard
               </button>
               <button
                 onClick={() => router.push('/upload')}
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all shadow-sm flex items-center gap-2"
+                className="flex-1 md:flex-none px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all shadow-sm inline-flex items-center justify-center gap-2"
               >
                 <Upload size={16} />
                 Upload New
               </button>
               <button
                 onClick={() => router.push('/score')}
-                className="px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm flex items-center gap-2"
+                className="flex-1 md:flex-none px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm inline-flex items-center justify-center gap-2"
               >
                 <BarChart3 size={16} />
                 View Scores
               </button>
               <button
                 onClick={() => router.push('/ml-tools')}
-                className="px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm flex items-center gap-2"
+                className="flex-1 md:flex-none px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 rounded-lg transition-all shadow-sm inline-flex items-center justify-center gap-2"
               >
                 <Activity size={16} />
                 ML Tools
@@ -323,7 +323,7 @@ export default function RecommendPage() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Left Sidebar - Resume Selector */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-md sticky top-24">
+            <div className="bg-white rounded-xl p-5 sm:p-6 border border-gray-200 shadow-md lg:sticky lg:top-24">
               <h2 className="text-xl font-bold text-gray-900 mb-4">Select Resume</h2>
               
               {isLoading ? (
@@ -377,8 +377,8 @@ export default function RecommendPage() {
 
                 {/* Resume Document Display */}
                 <div className="bg-white rounded-xl border border-gray-200 shadow-md mb-8 overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-6 py-4 border-b border-gray-200">
-                    <div className="flex items-center justify-between">
+                  <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-4 sm:px-6 py-4 border-b border-gray-200">
+                    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900">Resume Preview</h3>
                         <p className="text-sm text-gray-600 mt-1">{selectedResume.fileName}</p>
@@ -393,7 +393,7 @@ export default function RecommendPage() {
                       </div>
                     </div>
                   </div>
-                  <div className="aspect-[8.5/11] bg-gray-100 overflow-auto">
+                  <div className="aspect-[4/5] sm:aspect-[8.5/11] bg-gray-100 overflow-auto">
                     <iframe
                       src={getPreviewSrc(selectedResume)}
                       className="w-full h-full border-0"
@@ -405,8 +405,8 @@ export default function RecommendPage() {
                 {selectedResume.score ? (
                   <>
                     {/* Summary Card */}
-                    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-200 mb-8 shadow-md">
-                      <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-5 sm:p-8 border border-blue-200 mb-8 shadow-md">
+                      <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                         AI-Powered Recommendations for {selectedResume.fileName}
                       </h2>
                       <p className="text-gray-700 mb-4">
@@ -416,7 +416,7 @@ export default function RecommendPage() {
                         </span>
                         , here are personalized suggestions to improve your resume.
                       </p>
-                      <div className="flex flex-wrap gap-3">
+                      <div className="flex flex-wrap gap-2 sm:gap-3">
                         <div className="px-4 py-2 bg-red-100 rounded-full text-red-700 text-sm font-medium">
                           {recommendations.filter(r => r.priority === 'high').length} High Priority
                         </div>
@@ -436,10 +436,10 @@ export default function RecommendPage() {
                           key={index}
                           className={`rounded-xl p-6 border-2 ${getPriorityColor(rec.priority)} backdrop-blur-sm transition-all hover:shadow-lg`}
                         >
-                          <div className="flex items-start justify-between mb-4">
+                          <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between mb-4">
                             <div className="flex items-center gap-3">
                               <div className="text-blue-600">{getIconComponent(rec.icon)}</div>
-                              <h3 className="text-xl font-bold text-gray-900">{rec.category}</h3>
+                              <h3 className="text-lg sm:text-xl font-bold text-gray-900">{rec.category}</h3>
                             </div>
                             <span className={`px-3 py-1 rounded-full text-xs font-semibold uppercase ${getPriorityBadge(rec.priority)}`}>
                               {rec.priority}
@@ -484,7 +484,7 @@ export default function RecommendPage() {
                 )}
               </>
             ) : (
-              <div className="bg-white rounded-xl p-12 border border-gray-200 shadow-md text-center">
+              <div className="bg-white rounded-xl p-8 sm:p-12 border border-gray-200 shadow-md text-center">
                 <div className="flex justify-center mb-4">
                   <Lightbulb className="w-16 h-16 text-blue-600" />
                 </div>

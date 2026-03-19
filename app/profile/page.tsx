@@ -191,10 +191,10 @@ export default function ProfilePage() {
             >
               <ArrowLeft className="mx-auto" size={20} />
             </button>
-            <h1 className="text-4xl font-black tracking-tight text-slate-900">My Profile</h1>
+            <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900">My Profile</h1>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex w-full flex-wrap items-center gap-2 lg:w-auto lg:justify-end">
             <div className="rounded-2xl border border-[#bac7bf] bg-[#dde6df] px-4 py-2 text-sm font-semibold text-slate-700">
               {isEditing ? 'Editing' : 'View Mode'}
             </div>
@@ -204,7 +204,7 @@ export default function ProfilePage() {
             {!isEditing ? (
               <button
                 onClick={() => setIsEditing(true)}
-                className="rounded-2xl bg-black px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90"
+                className="w-full sm:w-auto rounded-2xl bg-black px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90"
               >
                 <span className="inline-flex items-center gap-2">
                   <Edit2 size={16} />
@@ -212,10 +212,10 @@ export default function ProfilePage() {
                 </span>
               </button>
             ) : (
-              <div className="flex items-center gap-2">
+              <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto">
                 <button
                   onClick={handleCancel}
-                  className="rounded-2xl border border-[#bac7bf] bg-[#dde6df] px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-[#d4dfd7]"
+                  className="flex-1 sm:flex-none rounded-2xl border border-[#bac7bf] bg-[#dde6df] px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-[#d4dfd7]"
                 >
                   <span className="inline-flex items-center gap-2">
                     <X size={16} />
@@ -225,7 +225,7 @@ export default function ProfilePage() {
                 <button
                   onClick={handleSave}
                   disabled={saving}
-                  className="rounded-2xl bg-black px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90 disabled:opacity-50"
+                  className="flex-1 sm:flex-none rounded-2xl bg-black px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90 disabled:opacity-50"
                 >
                   <span className="inline-flex items-center gap-2">
                     <Save size={16} />
@@ -270,10 +270,10 @@ export default function ProfilePage() {
               )}
 
               <div className="min-w-0 flex-1">
-                <h2 className="truncate text-4xl font-black leading-tight text-slate-900">
+                <h2 className="truncate text-2xl sm:text-4xl font-black leading-tight text-slate-900">
                   {profile.name || 'Your Name'}
                 </h2>
-                <p className="mt-1 text-xl font-semibold text-slate-600">{profile.role}</p>
+                <p className="mt-1 text-base sm:text-xl font-semibold text-slate-600">{profile.role}</p>
                 <p className="mt-2 truncate text-sm text-slate-600">{profile.email}</p>
               </div>
             </div>
@@ -314,7 +314,7 @@ export default function ProfilePage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="rounded-2xl border border-[#bac7bf] bg-[#e8eeea] p-3">
                 <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Member Since</p>
                 <p className="mt-1 text-sm font-bold text-slate-800">
@@ -371,7 +371,7 @@ export default function ProfilePage() {
           </section>
 
           <section className={`${cardBase} p-5 xl:col-span-5`}>
-            <h3 className="mb-4 text-3xl font-black text-slate-900">Detailed Information</h3>
+            <h3 className="mb-4 text-2xl sm:text-3xl font-black text-slate-900">Detailed Information</h3>
 
             <div className="space-y-3">
               <div className="rounded-2xl border border-[#cad4ce] bg-[#e8eeea] p-3">
@@ -441,8 +441,8 @@ export default function ProfilePage() {
           </section>
 
           <section className={`${cardBase} p-5 xl:col-span-3`}>
-            <h3 className="mb-4 text-3xl font-black text-slate-900">Activity</h3>
-            <div className="grid grid-cols-2 gap-3">
+            <h3 className="mb-4 text-2xl sm:text-3xl font-black text-slate-900">Activity</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="rounded-2xl bg-[#dde6df] p-3 text-center">
                 <FileText className="mx-auto mb-2 text-slate-700" size={18} />
                 <p className="text-xs font-semibold text-slate-500">Total</p>
@@ -471,7 +471,7 @@ export default function ProfilePage() {
           </section>
 
           <section className={`${cardBase} p-5 xl:col-span-4`}>
-            <h3 className="mb-4 text-3xl font-black text-slate-900">Links</h3>
+            <h3 className="mb-4 text-2xl sm:text-3xl font-black text-slate-900">Links</h3>
             <div className="space-y-3">
               <div className="rounded-2xl border border-[#cad4ce] bg-[#e8eeea] p-3">
                 <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-slate-500">

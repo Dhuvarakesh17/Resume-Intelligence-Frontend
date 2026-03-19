@@ -125,8 +125,8 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#e7efe9] p-4 md:p-6">
-      <div className="mx-auto grid min-h-[calc(100vh-2rem)] max-w-[1400px] grid-cols-1 overflow-hidden rounded-[28px] border border-[#c8d3cc] bg-[#edf3ef] shadow-xl lg:grid-cols-2">
+    <div className="min-h-screen bg-[#e7efe9] p-3 sm:p-4 md:p-6">
+      <div className="mx-auto grid min-h-[calc(100vh-1.5rem)] sm:min-h-[calc(100vh-2rem)] max-w-[1400px] grid-cols-1 overflow-hidden rounded-2xl sm:rounded-[28px] border border-[#c8d3cc] bg-[#edf3ef] shadow-xl lg:grid-cols-2">
         <div className="hidden items-center p-4 lg:flex">
           <div className="w-full rounded-[24px] border border-[#c8d3cc] bg-[#dfe8e2] p-4">
             <div className="relative mx-auto aspect-[16/10] w-full">
@@ -141,10 +141,10 @@ export default function LoginPage() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center p-6 md:p-10 lg:p-12">
-          <div className="w-full max-w-[560px] space-y-8 rounded-3xl border border-[#c8d3cc] bg-[#f3f7f4] p-10 shadow-sm md:p-12 lg:min-h-[520px] lg:flex lg:flex-col lg:justify-center">
+        <div className="flex items-center justify-center p-4 sm:p-6 md:p-10 lg:p-12">
+          <div className="w-full max-w-[560px] space-y-6 sm:space-y-8 rounded-2xl sm:rounded-3xl border border-[#c8d3cc] bg-[#f3f7f4] p-5 sm:p-8 md:p-10 lg:min-h-[520px] lg:flex lg:flex-col lg:justify-center">
             <div>
-              <h2 className="text-center text-4xl font-black tracking-tight text-slate-900">Resume AI</h2>
+              <h2 className="text-center text-3xl sm:text-4xl font-black tracking-tight text-slate-900">Resume AI</h2>
               <p className="mt-2 text-center text-sm font-medium text-slate-600">Sign in to your account</p>
             </div>
 
@@ -159,7 +159,7 @@ export default function LoginPage() {
                 onError={() => setError('Failed to load Google script. Check network/ad blocker and refresh.')}
               />
               <div className="flex flex-col items-center gap-3">
-                <div ref={googleButtonRef} className="min-h-[44px]" />
+                <div ref={googleButtonRef} className="min-h-[44px] w-full flex justify-center" />
                 {!isGoogleButtonRendered && (
                   <button
                     type="button"

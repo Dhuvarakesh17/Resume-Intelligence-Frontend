@@ -149,7 +149,7 @@ export default function FilterCandidatesPage() {
                 <Filter className="text-violet-600" size={20} />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">Filter Candidates</h1>
+                <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Filter Candidates</h1>
                 <p className="text-sm text-gray-600">Filter by skills, score thresholds & industry</p>
               </div>
             </div>
@@ -161,7 +161,7 @@ export default function FilterCandidatesPage() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Input Section */}
-          <div className="space-y-6">
+          <div className="order-2 lg:order-1 space-y-6">
             <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-lg font-semibold text-gray-900">Select Resumes ({selectedResumeIds.length})</h2>
@@ -311,7 +311,7 @@ export default function FilterCandidatesPage() {
           </div>
 
           {/* Results */}
-          <div className="space-y-6">
+          <div className="order-1 lg:order-2 space-y-6">
             {result ? (
               <>
                 {/* Summary */}
@@ -374,7 +374,7 @@ export default function FilterCandidatesPage() {
                 )}
               </>
             ) : (
-              <div className="bg-white rounded-xl p-12 border border-gray-200 shadow-md flex flex-col items-center justify-center min-h-[500px]">
+              <div className="bg-white rounded-xl p-8 sm:p-12 border border-gray-200 shadow-md flex flex-col items-center justify-center min-h-[360px] sm:min-h-[500px]">
                 <div className="mb-6 relative w-full h-64 flex items-center justify-center">
                   <Image
                     src="/filtler-candidate.jpg"

@@ -1,0 +1,24 @@
+services:
+  frontend:
+    image: node:20-alpine
+    container_name: resume-frontend
+    working_dir: /app
+    command: sh -c "npm install && npm run dev -- -H 0.0.0.0 -p 3000"
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.local
+    environment:
+      # Fallback values if .env.local is missing or incomplete
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8080}
+      NEXT_PUBLIC_GOOGLE_CLIENT_ID: ${NEXT_PUBLIC_GOOGLE_CLIENT_ID:-}
+      WATCHPACK_POLLING: "true"
+    volumes:
+      - ./:/app
+      - resume_frontend_node_modules:/app/node_modules
+      - resume_frontend_next_cache:/app/.next
+    restart: unless-stopped
+
+volumes:
+  resume_frontend_node_modules:
+  resume_frontend_next_cache:

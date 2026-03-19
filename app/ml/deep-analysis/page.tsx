@@ -150,7 +150,7 @@ export default function DeepMlAnalysisPage() {
                 <Brain className="text-white" size={24} />
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
                   Deep ML Scoring
                 </h1>
                 <p className="text-sm text-gray-600">Deep ML scoring with confidence metrics</p>
@@ -164,7 +164,7 @@ export default function DeepMlAnalysisPage() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Input Form */}
-          <div className="space-y-6">
+          <div className="order-2 lg:order-1 space-y-6">
             <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-xl shadow-purple-100/50">
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
@@ -248,7 +248,7 @@ export default function DeepMlAnalysisPage() {
           </div>
 
           {/* Results */}
-          <div className="space-y-6">
+          <div className="order-1 lg:order-2 space-y-6">
             {result ? (
               <div className="max-h-[calc(100vh-200px)] overflow-y-auto pr-2 space-y-6">
                 {/* Overview Scores */}
@@ -258,28 +258,28 @@ export default function DeepMlAnalysisPage() {
                     <CheckCircle2 className="text-green-600" size={28} />
                   </div>
                   
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-4 border border-purple-200 shadow-sm">
                       <p className="text-xs font-semibold text-purple-700 mb-2 uppercase tracking-wide">Word Quality</p>
-                      <p className="text-3xl font-bold bg-gradient-to-br from-purple-700 to-purple-900 bg-clip-text text-transparent">
+                      <p className="text-2xl sm:text-3xl font-bold bg-gradient-to-br from-purple-700 to-purple-900 bg-clip-text text-transparent">
                         {result.ml_analysis.word_quality_score.toFixed(1)}
                       </p>
                     </div>
                     <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 border border-blue-200 shadow-sm">
                       <p className="text-xs font-semibold text-blue-700 mb-2 uppercase tracking-wide">Professionalism</p>
-                      <p className="text-3xl font-bold bg-gradient-to-br from-blue-700 to-blue-900 bg-clip-text text-transparent">
+                      <p className="text-2xl sm:text-3xl font-bold bg-gradient-to-br from-blue-700 to-blue-900 bg-clip-text text-transparent">
                         {result.ml_analysis.professionalism_score.toFixed(1)}
                       </p>
                     </div>
                     <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4 border border-green-200 shadow-sm">
                       <p className="text-xs font-semibold text-green-700 mb-2 uppercase tracking-wide">Semantic Alignment</p>
-                      <p className="text-3xl font-bold bg-gradient-to-br from-green-700 to-green-900 bg-clip-text text-transparent">
+                      <p className="text-2xl sm:text-3xl font-bold bg-gradient-to-br from-green-700 to-green-900 bg-clip-text text-transparent">
                         {result.ml_analysis.semantic_alignment.toFixed(1)}
                       </p>
                     </div>
                     <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl p-4 border border-amber-200 shadow-sm">
                       <p className="text-xs font-semibold text-amber-700 mb-2 uppercase tracking-wide">Vocabulary Richness</p>
-                      <p className="text-3xl font-bold bg-gradient-to-br from-amber-700 to-amber-900 bg-clip-text text-transparent">
+                      <p className="text-2xl sm:text-3xl font-bold bg-gradient-to-br from-amber-700 to-amber-900 bg-clip-text text-transparent">
                         {result.ml_analysis.vocabulary_richness.toFixed(1)}
                       </p>
                     </div>
@@ -416,7 +416,7 @@ export default function DeepMlAnalysisPage() {
                 {/* Text Features */}
                 <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-xl shadow-purple-100/50">
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Text Statistics</h3>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 border border-blue-200">
                       <p className="text-xs font-semibold text-blue-700 mb-1 uppercase tracking-wide">Word Count</p>
                       <p className="text-2xl font-bold text-blue-900">{result.ml_analysis.text_features.word_count}</p>
@@ -475,7 +475,7 @@ export default function DeepMlAnalysisPage() {
                 </div>
               </div>
             ) : (
-              <div className="bg-white rounded-2xl p-12 border border-gray-100 shadow-xl shadow-purple-100/50 text-center min-h-[500px] flex flex-col items-center justify-center">
+              <div className="bg-white rounded-2xl p-8 sm:p-12 border border-gray-100 shadow-xl shadow-purple-100/50 text-center min-h-[360px] sm:min-h-[500px] flex flex-col items-center justify-center">
                 <div className="mb-6 relative w-full h-64 flex items-center justify-center">
                   <Image
                     src="/deep-ml-analysis.jpg"
